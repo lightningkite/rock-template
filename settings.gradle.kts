@@ -7,6 +7,8 @@ pluginManagement {
     val rockVersion: String by settings
     repositories {
         mavenLocal()
+        maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/")
+        maven(url = "https://s01.oss.sonatype.org/content/repositories/releases/")
         google()
         gradlePluginPortal()
         mavenCentral()
