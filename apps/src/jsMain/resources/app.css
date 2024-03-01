@@ -1,0 +1,28 @@
+@keyframes backgroundFade {
+    0%   { background-color:var(--animation-color-end); }
+    50%  { background-color:var(--animation-color-start); }
+    100% { background-color:var(--animation-color-end); }
+}
+@-o-keyframes backgroundFade{
+    0%   { background-color:var(--animation-color-end); }
+    50%  { background-color:var(--animation-color-start); }
+    100% { background-color:var(--animation-color-end); }
+}
+@-moz-keyframes backgroundFade{
+    0%   { background-color:var(--animation-color-end); }
+    50%  { background-color:var(--animation-color-start); }
+    100% { background-color:var(--animation-color-end); }
+}
+@-webkit-keyframes backgroundFade{
+    0%   { background-color:var(--animation-color-end); }
+    50%  { background-color:var(--animation-color-start); }
+    100% { background-color:var(--animation-color-end); }
+}
+.background-fade {
+    --animation-color-start: red;
+    --animation-color-end: white;
+    -webkit-animation: backgroundFade 2s infinite;
+    -moz-animation: backgroundFade 2s infinite;
+    -o-animation: backgroundFade 2s infinite;
+    animation: backgroundFade 2s infinite;
+}
