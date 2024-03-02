@@ -1,0 +1,30 @@
+{
+    "projectName": "ilussobsaapi",
+    "bucket": "lightningkite-terraform",
+    "bucketPathOverride": null,
+    "vpc": false,
+    "existingVpc": false,
+    "domain": true,
+    "profile": "lk",
+    "createBeforeDestroy": true,
+    "handlers": {
+        "serveApp": "Direct",
+        "oauthApple": "Direct",
+        "cache": "DynamoDB",
+        "secretBasis": "Standard",
+        "exceptions": "Direct",
+        "general": "Standard",
+        "database": "MongoDB Serverless",
+        "geocoding": "Direct",
+        "sms": "Direct",
+        "logging": "Direct",
+        "files": "S3",
+        "metrics": "Cloudwatch",
+        "oauthGoogle": "Direct",
+        "oauthMicrosoft": "Direct",
+        "email": "SMTP through SES",
+        "notifications": "Direct",
+        "frontend": "Direct",
+        "exchangeRateApi": "Direct"
+    }
+}

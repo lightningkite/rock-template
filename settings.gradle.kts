@@ -23,3 +23,5 @@ pluginManagement {
 }
 
 include(":apps")
+include(":shared")
+include(":server")

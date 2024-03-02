@@ -1,0 +1,30 @@
+{
+    "projectName": "hammerprice",
+    "bucket": "your-deployment-bucket",
+    "bucketPathOverride": null,
+    "vpc": false,
+    "existingVpc": false,
+    "domain": true,
+    "profile": "default",
+    "createBeforeDestroy": false,
+    "handlers": {
+        "serveApp": "Direct",
+        "oauthApple": "Direct",
+        "cache": "DynamoDB",
+        "secretBasis": "Standard",
+        "exceptions": "Direct",
+        "general": "Standard",
+        "database": "AuroraDB Serverless V2",
+        "geocoding": "Direct",
+        "sms": "Direct",
+        "logging": "Direct",
+        "files": "S3",
+        "metrics": "Cloudwatch",
+        "oauthGoogle": "Direct",
+        "oauthMicrosoft": "Direct",
+        "email": "SMTP through SES",
+        "notifications": "Direct",
+        "frontend": "Direct",
+        "exchangeRateApi": "Direct"
+    }
+}

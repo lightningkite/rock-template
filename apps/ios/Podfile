@@ -7,6 +7,8 @@ target 'rock-template' do
 
   # Pods for rock-template
   pod 'apps', :path => '../apps.podspec'
+  pod 'FirebaseMessaging'
+  pod 'FirebaseCore'
 
   target 'rock-templateTests' do
     inherit! :search_paths

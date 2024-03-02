@@ -1,19 +1,27 @@
 //
 //  AppDelegate.swift
-//  rock-template
-//
-//  Created by Joseph Ivie on 3/1/24.
+//  Created by Joseph Ivie on 1/3/24.
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseMessaging
+import apps
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,  MessagingDelegate, UNUserNotificationCenterDelegate  {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+
+        UIApplication.shared.registerForRemoteNotifications()
         return true
     }
 
@@ -32,5 +40,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+
+    public func messaging(
+        _ messaging: Messaging,
+        didReceiveRegistrationToken fcmToken: String?
+    ) {
+        if let fcmToken = fcmToken{
+            AppKt.setFcmToken(value: fcmToken)
+        }
+    }
+
+
+    public func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ){
+        completionHandler([.badge, .sound])
+
+    }
+
+    public func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void
+    ){
+        completionHandler()
+    }
 }
 

@@ -53,6 +53,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api("com.lightningkite.rock:library:$rockVersion")
+//                api("com.lightningkite.lightningserver:client:$lightningServerVersion")
+                api(project(":shared"))
                 api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines")
             }
             kotlin {
@@ -61,10 +63,12 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+                api("com.google.firebase:firebase-messaging-ktx:23.4.0")
             }
         }
         val jsMain by getting {
             dependencies {
+                implementation(npm("firebase","10.7.1"))
             }
         }
     }
