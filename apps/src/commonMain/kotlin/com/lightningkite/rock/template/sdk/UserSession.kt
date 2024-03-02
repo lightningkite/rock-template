@@ -36,8 +36,8 @@ class AnonSession(api: Api): AbstractAnonymousSession(api) {
 @Serializable
 enum class ApiOption(val apiName: String, val http: String, val ws: String) {
     Dev("         ", "https://rocktemplateapi.cs.lightningkite.com", "wss://ws.rocktemplateapi.cs.lightningkite.com"),
-    Local("Local", "http://localhost:8941", "ws://localhost:8941"),
-    SameServer("SameServer", "", ""),
+    Local("Local", "http://localhost:8080", "ws://localhost:8080"),
+    SameServer("SameServer", "", "ws://localhost:8080"),
     ;
 
     companion object {

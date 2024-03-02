@@ -40,9 +40,10 @@ val selectedApi = PersistentProperty<ApiOption>("apiOption", ApiOption.Dev)
 class LandingScreen() : RockScreen {
     override fun ViewWriter.render() {
         col {
+            val thing = shared { AnonSession(selectedApi.await().api).publicMessages.watch(Query(orderBy = sort { it.at.descending() })) }
             expanding - recyclerView {
                 children(shared {
-                    AnonSession(selectedApi.await().api).publicMessages.watch(Query(orderBy = sort { it.at.descending() })).await()
+                    thing.await().await()
                 }) {
                     card - col {
                         text { ::content { it.await().content }}
