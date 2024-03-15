@@ -53,7 +53,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api("com.lightningkite.rock:library:$rockVersion")
-//                api("com.lightningkite.lightningserver:client:$lightningServerVersion")
+                api("com.lightningkite.lightningserver:client:$lightningServerVersion")
                 api(project(":shared"))
                 api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines")
             }

@@ -18,7 +18,7 @@ terraform {
 terraform {
   backend "s3" {
     bucket = "lightningkite-terraform"
-    key    = "ilussobsa-app"
+    key    = "rock-template"
     region = "us-west-2"
   }
 }
